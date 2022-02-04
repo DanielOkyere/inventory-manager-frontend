@@ -17,12 +17,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileListComponentComponent } from './component/profile-list-component/profile-list-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationBarComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    ProfileListComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
