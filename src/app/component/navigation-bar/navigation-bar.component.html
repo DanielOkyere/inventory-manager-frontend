@@ -4,10 +4,29 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+    <mat-nav-list role="navigation">
+      <a mat-list-item routerLink="/home">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </a>
+      <a mat-list-item routerLink="/contact-support">
+        <mat-icon>
+          contact_support
+        </mat-icon>
+        <span>Support</span>
+      </a>
+      <a mat-list-item routerLink="/expenditure">
+        <mat-icon>
+          account_balance_wallet
+        </mat-icon>
+        <span>Expenditure</span>
+      </a>
+      <a mat-list-item routerLink="/account">
+        <mat-icon>
+          manage_accounts
+        </mat-icon>
+        <span>Accounts</span>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,10 +40,17 @@
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
     <span>inventory-manager</span>
+    <div class="toolbar-navigation">
+      <button mat-button routerLink="/home">Home</button>
+      <button mat-button routerLink="/contact-support">Support</button>
+      <button mat-button routerLink="/expenditure">Expenditure</button>
+      <button mat-button routerLink="/account">Accounts</button>
+    </div>
     <span class="fill-remaining-space"></span>
     <button type="button" mat-icon-button (click)="drawer.toggle()" >
       <mat-icon aria-label="Close side nav in Desktop">account_circle</mat-icon></button>
     </mat-toolbar>
     <!-- Add Content Here -->
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
